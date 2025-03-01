@@ -1,0 +1,21 @@
+@media screen and (max-width: 768px) {
+  .menu-items {
+    position: absolute;
+    display: block;
+    background-color: #0d9488;
+    padding: 20px;
+    width: 300px;
+    height: 100vh;
+    top: 64px;
+    left: -300px;
+    z-index: 9999;
+    transition: left 0.5s cubic-bezier(0.43, 0.38, 0.68, 0.63);
+  }
+  .menu-items.block {
+    left: 0px;
+  }
+  .menu-items li {
+    padding: 5px 0px;
+    color: #fff;
+  }
+}
