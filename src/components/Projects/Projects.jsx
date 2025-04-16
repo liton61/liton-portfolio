@@ -26,13 +26,20 @@ const Projects = () => {
   }, []);
 
   return (
-    <div id="projects" className="text-gray-300 lg:my-48 my-20">
+    <div id="projects" className="text-gray-300 lg:mt-48 mt-20">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5">
+        <h2
+          className="text-3xl font-bold text-center mb-10"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
+          Projects 👇
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="image-wrap border border-teal-600 p-5 relative"
+              className="image-wrap bg-teal-600 rounded-md p-1 relative"
               data-aos="fade-up"
               data-aos-duration="3000"
             >
@@ -40,7 +47,7 @@ const Projects = () => {
                 <img
                   src={project.img}
                   alt={project.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-md"
                 />
               </a>
               <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">

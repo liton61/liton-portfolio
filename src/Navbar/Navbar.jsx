@@ -42,9 +42,9 @@ const Navbar = () => {
               <a href="#contact">Contact</a>
             </li>
           </ul>
-          <button className="lg:block hidden bg-teal-600 px-4 py-2 rounded text-white">
+          <button className="lg:block hidden bg-teal-600 px-4 py-2 rounded-md text-white">
             <a href={resume} download="liton-resume.pdf">
-              Download Resume
+              Resume
             </a>
           </button>
         </div>

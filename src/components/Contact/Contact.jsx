@@ -34,13 +34,13 @@ const Contact = () => {
   return (
     <div id="contact" className="text-gray-300 lg:my-48 my-20">
       <Container>
+        <h2 className="text-3xl font-bold text-center text-white mb-10">
+          Contact Me 👇
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           <div>
-            <h2 className="text-3xl font-bold text-center text-white">
-              Contact Me 👇
-            </h2>
             <form
-              className="shadow-lg shadow-[#040c16] p-10"
+              className="bg-gray-800 rounded-md shadow-md p-10"
               ref={form}
               onSubmit={sendEmail}
               data-aos="zoom-in"
@@ -92,7 +92,7 @@ const Contact = () => {
           </div>
           <div className="grid grid-cols-1 gap-5">
             <div
-              className="flex items-center gap-5 shadow-lg p-5 shadow-[#040c16]"
+              className="flex items-center gap-5 bg-gray-800 rounded-md shadow-md p-5"
               data-aos="zoom-in"
               data-aos-duration="2000"
             >
@@ -105,7 +105,7 @@ const Contact = () => {
               </div>
             </div>
             <div
-              className="flex items-center gap-5 shadow-lg p-5 shadow-[#040c16]"
+              className="flex items-center gap-5 bg-gray-800 rounded-md shadow-md p-5"
               data-aos="zoom-in"
               data-aos-duration="2000"
             >
@@ -118,7 +118,7 @@ const Contact = () => {
               </div>
             </div>
             <div
-              className="flex items-center gap-5 shadow-lg p-5 shadow-[#040c16]"
+              className="flex items-center gap-5 bg-gray-800 rounded-md shadow-md p-5"
               data-aos="zoom-in"
               data-aos-duration="2000"
             >

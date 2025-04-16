@@ -4,6 +4,7 @@
 
 body{
     background-color: #111827;
+    @apply font-inter;
 }
 html {
     scroll-behavior: smooth;

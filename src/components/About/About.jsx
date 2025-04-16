@@ -1,104 +1,103 @@
-import liton from "../../assets/liton.jpg";
-import { Typewriter } from "react-simple-typewriter";
 import Container from "../Container/Container";
-import { MdFacebook } from "react-icons/md";
-import { FaGithub, FaLinkedinIn, FaTwitter } from "react-icons/fa";
-import { GoDotFill } from "react-icons/go";
-import { GrLocation } from "react-icons/gr";
+import { MdSchool } from "react-icons/md";
+
+const experiences = [
+  {
+    company: "SoftyPy",
+    role: "Software Engineer (Frontend)",
+    duration: "Jun 2024 – Present",
+    description:
+      "Develop and maintain client-side applications with modern frontend technologies. Collaborate with cross-functional teams to build scalable, accessible, and responsive web interfaces. Handle state management, server-side integration, and performance optimization using tools like Redux and React Query.",
+    responsibilities: [
+      "Developed scalable and performant frontend architectures using React and Next.js.",
+      "Implemented advanced state management using Redux Toolkit and React Query.",
+      "Styled and structured UI with Tailwind CSS, MUI, and ShadCN components.",
+      "Built reusable components using TypeScript with strong type safety.",
+      "Collaborated in Agile teams to deliver features through CI/CD pipelines.",
+    ],
+    technologies: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Redux Toolkit",
+      "React Query",
+      "Tailwind CSS",
+    ],
+  },
+];
+
+const education = [
+  {
+    institute: "Sonargaon University",
+    degree: "BSc in Computer Science & Engineering",
+    period: "Jan 2019 – Sep 2023",
+    location: "Dhaka, Bangladesh",
+  },
+];
 
 const About = () => {
   return (
-    <div id="about">
+    <div id="about" className="text-white lg:mt-48 mt-20">
       <Container>
-        <div className="grid lg:grid-cols-12 grid-cols-1 md:grid-cols-2 lg:gap-20 gap-10 lg:mt-40 mt-16">
-          {/* Text Section */}
-          <div className="lg:col-span-8 w-full text-gray-300 lg:order-1 order-2">
-            <div>
-              <h1
-                className="lg:text-6xl text-4xl font-bold mb-5"
-                data-aos="zoom-in"
-                data-aos-duration="2000"
-              >
-                <span
-                  className="bg-gradient-to-r from-teal-500 to-green-400 bg-clip-text text-transparent font-bold"
-                  style={{ fontFamily: "Satisfy" }}
-                >
-                  <Typewriter
-                    words={["Hi, I'm Liton Mia"]}
-                    loop={5}
-                    cursor
-                    cursorStyle="|"
-                    typeSpeed={70}
-                    deleteSpeed={50}
-                    delaySpeed={1000}
-                  />
-                </span>
-              </h1>
-
-              <p
-                className="text-md text-justify"
-                data-aos="zoom-in"
-                data-aos-duration="2000"
-              >
-                A MERN stack developer passionate about crafting clean,
-                efficient, and scalable web applications. With a solid
-                foundation in MongoDB, Express.js, React.js, and Node.js, I aim
-                to contribute innovative solutions while continuously learning
-                and growing in this dynamic field.
+        <h2
+          className="text-3xl font-bold text-center mb-10"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+        >
+          About Me 👇
+        </h2>
+        <div className="border-l border-teal-600 pl-5">
+          {experiences.map((exp, index) => (
+            <div
+              key={index}
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay={index * 100}
+            >
+              <h3 className="text-xl font-semibold text-white">{exp.role}</h3>
+              <p className="text-sm text-gray-400 mb-1">
+                {exp.company} · {exp.duration}
               </p>
-            </div>
-
-            {/* Contact Info */}
-            <div data-aos="zoom-in" data-aos-duration="2000">
-              <ul className="list-disc mb-5 mt-10">
-                <li className="flex items-center gap-2 mt-7">
-                  <GrLocation size={25} /> Dhaka, Bangladesh
-                </li>
-                <li className="flex items-center gap-2 mt-3">
-                  <GoDotFill size={25} color="#47DC81" /> Available for new
-                  projects
-                </li>
-
-                {/* Social Icons */}
-                <li className="flex items-center gap-5 mt-7">
-                  <a
-                    href="https://www.facebook.com/profile.php?id=100092320843338"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <MdFacebook size={25} className="text-white" />
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/liton-mia-3212522a5"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaLinkedinIn size={25} className="text-white" />
-                  </a>
-                  <a
-                    href="https://github.com/liton61"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaGithub size={25} className="text-white" />
-                  </a>
-                  <a href="#">
-                    <FaTwitter size={25} className="text-white" />
-                  </a>
-                </li>
+              <p className="text-white my-4">{exp.description}</p>
+              <ul className="list-disc list-inside text-sm text-gray-400 space-y-1 mb-4">
+                {exp.responsibilities.map((task, i) => (
+                  <li key={i}>{task}</li>
+                ))}
               </ul>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {exp.technologies.map((tech, idx) => (
+                  <span
+                    key={idx}
+                    className="bg-teal-600 text-white text-xs font-semibold px-4 py-2 rounded-full"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
+          ))}
+        </div>
 
-          {/* Image Section (No Rotation) */}
-          <div className="lg:col-span-4 w-full flex justify-center items-center order-1 lg:order-2">
-            <img
-              src={liton}
-              alt="Liton Mia"
-              className="md:w-96 w-full h-auto border-4 border-teal-600 rounded-full"
-              data-aos="zoom-in"
-              data-aos-duration="2000"
-            />
+        {/* --- Education Section --- */}
+        <div id="education" className="mt-10">
+          <div className="space-y-8">
+            {education.map((edu, index) => (
+              <div
+                key={index}
+                className="bg-gray-800 border-l border-teal-600 p-10 rounded-md shadow-md"
+                data-aos="fade-up"
+                data-aos-duration="1500"
+              >
+                <div className="flex items-center gap-4 mb-2">
+                  <MdSchool size={30} className="text-teal-400" />
+                  <h3 className="text-xl font-semibold">{edu.institute}</h3>
+                </div>
+                <p className="text-teal-300">{edu.degree}</p>
+                <p className="text-sm text-gray-400">
+                  {edu.period} · {edu.location}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </Container>
